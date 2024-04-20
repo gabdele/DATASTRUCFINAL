@@ -16,12 +16,17 @@ public class QuestionWindow extends JFrame {
         //y.qOptions
         switch (y.t){
             case DROP:
+                String[] oList = new String[y.qOptions.size()];
                 for (int i = 0; i<y.qOptions.size(); i++){
-                    y.qOptions.get(i);
+                    oList[i]=y.qOptions.get(i);
                 }
+                JComboBox options = new JComboBox(oList);
                 break;
             case CHECK:
-
+                for (int i = 0; i<y.qOptions.size(); i++){
+                    y.qOptions.get(i);
+                    //do this next
+                }
                 break;
             case RADIO:
 
