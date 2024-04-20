@@ -1,5 +1,5 @@
-import javax.swing.*;
-public class QuestionNode extends JFrame {
+
+public class QuestionNode {
         private Question question;
         private QuestionNode next;
         private QuestionNode prev;
