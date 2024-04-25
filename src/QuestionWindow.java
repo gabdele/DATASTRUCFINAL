@@ -33,6 +33,7 @@ public class QuestionWindow extends JFrame {
                 ButtonGroup group = new ButtonGroup();
                 for (int i = 0; i<y.qOptions.size(); i++){
                     group.add(new JRadioButton(y.qOptions.get(i)));
+
                 }
                 break;
         }
