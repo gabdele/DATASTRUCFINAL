@@ -7,13 +7,15 @@ public class QuestionWindow extends JFrame {
     JLabel qText;
     JButton nextB;
     JButton prevB;
+    ButtonGroup group;
+    JPanel options = new JPanel();
 
     QuestionWindow(QuestionNode x){
         Question y = x.getQuestion();
         heading = new JLabel("Question"+y.ID);
         heading.setFont(new Font("Serif", Font.BOLD,20));
         qText = new JLabel(y.getQuestionText());
-        JPanel options = new JPanel();
+
         //y.qOptions
         switch (y.t){
             case DROP:
@@ -30,12 +32,13 @@ public class QuestionWindow extends JFrame {
                 }
                 break;
             case RADIO:
-                ButtonGroup group = new ButtonGroup();
                 for (int i = 0; i<y.qOptions.size(); i++){
-                    group.add(new JRadioButton(y.qOptions.get(i)));
-
+                    final JRadioButton btn = new JRadioButton(y.qOptions.get(i));
+                    group.add(btn);
+                    options.add(btn);
                 }
                 break;
+
         }
     }
 }
