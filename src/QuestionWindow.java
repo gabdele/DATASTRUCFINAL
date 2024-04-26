@@ -1,8 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class QuestionWindow extends JFrame {
+public class QuestionWindow extends JFrame implements ActionListener {
     JLabel heading;
     JLabel qText;
     JButton nextB;
@@ -11,10 +13,17 @@ public class QuestionWindow extends JFrame {
     JPanel options = new JPanel();
 
     QuestionWindow(QuestionNode x){
+        setSize(600,600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Question y = x.getQuestion();
         heading = new JLabel("Question"+y.ID);
         heading.setFont(new Font("Serif", Font.BOLD,20));
         qText = new JLabel(y.getQuestionText());
+        nextB = new JButton("next");
+        prevB = new JButton("back");
+
+        nextB.addActionListener(this);
+        prevB.addActionListener(this);
 
         //y.qOptions
         switch (y.t){
@@ -38,7 +47,11 @@ public class QuestionWindow extends JFrame {
                     options.add(btn);
                 }
                 break;
-
         }
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
     }
 }
