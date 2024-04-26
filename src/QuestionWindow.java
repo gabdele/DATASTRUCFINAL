@@ -3,12 +3,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
 public class QuestionWindow extends JFrame implements ActionListener {
     JLabel heading;
     JLabel qText;
     JButton nextB;
     JButton prevB;
+    JButton submitB;
     ButtonGroup group;
     JPanel options = new JPanel();
 
@@ -21,6 +21,7 @@ public class QuestionWindow extends JFrame implements ActionListener {
         qText = new JLabel(y.getQuestionText());
         nextB = new JButton("next");
         prevB = new JButton("back");
+        submitB = new JButton("submit");
 
         nextB.addActionListener(this);
         prevB.addActionListener(this);
@@ -52,6 +53,15 @@ public class QuestionWindow extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        JButton pressed = (JButton) e.getSource();
+        if(pressed==nextB){
 
+        }
+        else if(pressed==prevB){
+
+        }
+        else{ //if submit is pressed
+
+        }
     }
 }

@@ -26,6 +26,7 @@ public class QuestionNode {
         }
 
     public void display(){
-
+        QuestionWindow Qwindow = new QuestionWindow(this);
+        Qwindow.setVisible(true);
     }
 }

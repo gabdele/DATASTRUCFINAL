@@ -33,7 +33,6 @@ class Question {
     public void setT(optType t) {
         this.t = t;
     }
-
     public String getQuestionText() {
         return questionText;
     }
