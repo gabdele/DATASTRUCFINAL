@@ -1,6 +1,6 @@
 public class QuestionLinkedList {
-    QuestionNode head;
-    QuestionNode tail;
+    static QuestionNode head;
+    static QuestionNode tail;
     QuestionLinkedList(){
         head = null;
         tail = null;

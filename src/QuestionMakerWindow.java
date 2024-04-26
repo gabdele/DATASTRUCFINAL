@@ -5,5 +5,10 @@ public class QuestionMakerWindow extends JFrame { //should be going recursively,
     JLabel whatKind;
     JComboBox thisKind;
     JLabel howMany;
+    JButton next;
+    int ID;
 
+    QuestionMakerWindow(){
+        heading = new JLabel("Question");
+    }
 }

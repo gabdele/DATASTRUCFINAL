@@ -48,6 +48,18 @@ public class QuestionWindow extends JFrame implements ActionListener {
                     options.add(btn);
                 }
                 break;
+            default:
+                System.out.println("an error has occured");
+                break;
+        }
+        //only have back button if there is a prev, only next if there is a next
+        if(x!=QuestionLinkedList.head){
+            add(prevB);
+        }
+        if(x!=QuestionLinkedList.tail){
+            add(nextB);
+        }else{
+            add(submitB);
         }
     }
 
