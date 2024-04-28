@@ -12,7 +12,7 @@ public class QuestionMakerWindow extends JFrame implements ActionListener { //sh
     JTextField thismany;
     JButton next;
     int ID = 0;
-    String[] listOfTypes = {"Dropdown","Checkbox","Radio Buttons"};
+    String[] listOfTypes = {"Dropdown","Radio Buttons","Checkboxes"};
     public static Question getQues(){
         return ques;
     }
@@ -45,6 +45,17 @@ public class QuestionMakerWindow extends JFrame implements ActionListener { //sh
     public void actionPerformed(ActionEvent e) {
         try{
             ques = new Question(ID,Integer.parseInt(thismany.getText()));
+            switch(thisKind.getSelectedIndex()){
+                case 0:
+                    ques.setT(Question.optType.DROP);
+                    break;
+                case 1:
+                    ques.setT(Question.optType.RADIO);
+                    break;
+                case 2:
+                    ques.setT(Question.optType.CHECK);
+                    break;
+            }
             QuestionMakerWindow2 qmw = new QuestionMakerWindow2();
             qmw.setVisible(true);
             dispose();
