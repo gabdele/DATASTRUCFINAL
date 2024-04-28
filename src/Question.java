@@ -4,6 +4,7 @@ class Question {
     int ID;
     enum optType {DROP,RADIO,CHECK}
     optType t;
+    int optNum;
     String questionText;
     ArrayList<String> qOptions;
     int[] respCounter;
@@ -23,6 +24,7 @@ class Question {
         this.respCounter = new int[optNum];
         this.t = t;
         this.questionText = questionText;
+        this.optNum = optNum;
         for(int i=0; i<optNum;i++){
             respCounter[i]=0;
         } //start the list of counters at 0
