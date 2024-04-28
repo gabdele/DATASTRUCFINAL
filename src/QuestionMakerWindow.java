@@ -18,14 +18,14 @@ public class QuestionMakerWindow extends JFrame implements ActionListener { //sh
     }
 
     QuestionMakerWindow(int id){ //insert previous ID to make sure it increases
-        setSize(400,300);
+        setSize(550,200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.ID= id+1;
         heading = new JLabel(" Question "+ID);
         whatKind = new JLabel(" What kind of options should be given?");
         thisKind = new JComboBox(listOfTypes);
-        howMany = new JLabel("how many options?");
-        thismany = new JTextField(3);
+        howMany = new JLabel(" How many options?                                ");
+        thismany = new JTextField(10);
         next = new JButton("next");
         next.addActionListener(this);
 
