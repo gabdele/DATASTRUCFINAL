@@ -55,7 +55,7 @@ public class QuestionMakerWindow2 extends JFrame implements ActionListener {
         }
         Menu.survey.insertNode(ques);
         if (source == next) {
-            QuestionMakerWindow QMW = new QuestionMakerWindow();
+            QuestionMakerWindow QMW = new QuestionMakerWindow(ques.ID);
             QMW.setVisible(true);
             dispose();
         }

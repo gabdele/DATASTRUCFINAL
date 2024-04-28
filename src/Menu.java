@@ -5,7 +5,7 @@ public class Menu extends JFrame {
 
     }
     public static void main(String[] args) {
-        QuestionMakerWindow thiswindow = new QuestionMakerWindow();
+        QuestionMakerWindow thiswindow = new QuestionMakerWindow(0);
         thiswindow.setVisible(true);
     }
 

@@ -17,10 +17,10 @@ public class QuestionMakerWindow extends JFrame implements ActionListener { //sh
         return ques;
     }
 
-    QuestionMakerWindow(){
+    QuestionMakerWindow(int id){
         setSize(400,300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ID++;
+        this.ID= id+1;
         heading = new JLabel(" Question "+ID);
         whatKind = new JLabel(" What kind of options should be given?");
         thisKind = new JComboBox(listOfTypes);
