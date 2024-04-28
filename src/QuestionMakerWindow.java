@@ -42,7 +42,11 @@ public class QuestionMakerWindow extends JFrame implements ActionListener { //sh
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        try{
         ques = new Question(ID,Integer.parseInt(thismany.getText()));
+        }catch(Exception exception){
+
+        }
         QuestionMakerWindow2 qmw = new QuestionMakerWindow2();
         qmw.setVisible(true);
         dispose();
