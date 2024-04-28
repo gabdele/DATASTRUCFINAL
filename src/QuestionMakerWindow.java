@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class QuestionMakerWindow extends JFrame implements ActionListener { //should be going recursively, with ID increasing somehow
-    Question ques;
+    static Question ques;
     JLabel heading;
     JLabel whatKind;
     JComboBox thisKind;
@@ -13,6 +13,9 @@ public class QuestionMakerWindow extends JFrame implements ActionListener { //sh
     JButton next;
     int ID = 0;
     String[] listOfTypes = {"Dropdown","Checkbox","Radio Buttons"};
+    public static Question getQues(){
+        return ques;
+    }
 
     QuestionMakerWindow(){
         setSize(400,300);
@@ -35,8 +38,6 @@ public class QuestionMakerWindow extends JFrame implements ActionListener { //sh
         add(thisKind);
         add(howMany);
         add(thismany);
-
-
     }
     @Override
     public void actionPerformed(ActionEvent e) {

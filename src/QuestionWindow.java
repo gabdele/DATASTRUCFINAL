@@ -12,6 +12,7 @@ public class QuestionWindow extends JFrame implements ActionListener {
     ButtonGroup group;
     JPanel options = new JPanel();
 
+
     QuestionWindow(QuestionNode x){
         setSize(600,600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
