@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class QuestionMakerWindow extends JFrame implements ActionListener { //should be going recursively, with ID increasing somehow
     static Question ques;
-    JLabel heading;
+    static JLabel heading;
     JLabel whatKind;
     JComboBox thisKind;
     JLabel howMany;
@@ -39,16 +39,19 @@ public class QuestionMakerWindow extends JFrame implements ActionListener { //sh
         add(thisKind);
         add(howMany);
         add(thismany);
+        add(next);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
         try{
-        ques = new Question(ID,Integer.parseInt(thismany.getText()));
+            ques = new Question(ID,Integer.parseInt(thismany.getText()));
+            QuestionMakerWindow2 qmw = new QuestionMakerWindow2();
+            qmw.setVisible(true);
+            dispose();
         }catch(Exception exception){
-
+            JOptionPane.showMessageDialog(null,
+                "please enter a number");
         }
-        QuestionMakerWindow2 qmw = new QuestionMakerWindow2();
-        qmw.setVisible(true);
-        dispose();
+
     }
 }
