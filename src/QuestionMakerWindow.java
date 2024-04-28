@@ -17,7 +17,7 @@ public class QuestionMakerWindow extends JFrame implements ActionListener { //sh
         return ques;
     }
 
-    QuestionMakerWindow(int id){
+    QuestionMakerWindow(int id){ //insert previous ID to make sure it increases
         setSize(400,300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.ID= id+1;

@@ -53,10 +53,15 @@ public class QuestionMakerWindow2 extends JFrame implements ActionListener {
                 ques.addOption(((JTextField) component).getText()); //add each entry to the qOptions part of question
             }
         }
-        Menu.survey.insertNode(ques);
+        Menu.survey.insertNode(ques); //add this completed question to the linkedlist
         if (source == next) {
             QuestionMakerWindow QMW = new QuestionMakerWindow(ques.ID);
             QMW.setVisible(true);
+            dispose();
+        }
+        else{ //if the user hits "done" send back to menu
+            Menu menu = new Menu();
+            menu.setVisible(true);
             dispose();
         }
     }
