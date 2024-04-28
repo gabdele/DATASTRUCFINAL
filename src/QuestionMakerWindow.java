@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class QuestionMakerWindow extends JFrame implements ActionListener { //should be going recursively, with ID increasing somehow
+    Question ques;
     JLabel heading;
     JLabel whatKind;
     JComboBox thisKind;
@@ -39,6 +40,9 @@ public class QuestionMakerWindow extends JFrame implements ActionListener { //sh
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        ques = new Question(ID,Integer.parseInt(thismany.getText()));
+        QuestionMakerWindow2 qmw = new QuestionMakerWindow2();
+        qmw.setVisible(true);
+        dispose();
     }
 }
