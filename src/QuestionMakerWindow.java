@@ -31,8 +31,9 @@ public class QuestionMakerWindow extends JFrame implements ActionListener { //sh
 
         heading.setFont(new Font("PLAIN", Font.BOLD,30));
         whatKind.setFont(new Font("PLAIN",Font.PLAIN,20));
+        howMany.setFont(new Font("PLAIN",Font.PLAIN,20));
 
-        setLayout(new GridLayout(3,1));
+        setLayout(new FlowLayout());
         add(heading);
         add(whatKind);
         add(thisKind);
