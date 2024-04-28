@@ -11,18 +11,21 @@ public class QuestionMakerWindow2 extends JFrame{
 QuestionMakerWindow2(){
     setSize(300,300);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    enText = new JTextField(10);
+    enText = new JTextField(20);
     JPanel theCenter = new JPanel();
     forOptions = new JPanel(new GridLayout(ques.respCounter.length, 1));
+
     for(int i= 0; i< ques.respCounter.length; i++){
-
+        forOptions.add(new JTextField(10));
     }
-
+    JButton next = new JButton("add new question");
+    JButton done = new JButton("Done");
 
     setLayout(new BorderLayout());
     add(QuestionMakerWindow.heading, BorderLayout.NORTH);
     theCenter.add(qText);
     theCenter.add(enText);
+    theCenter.add(aText);
     theCenter.add(forOptions);
     add(theCenter,BorderLayout.CENTER);
     }
