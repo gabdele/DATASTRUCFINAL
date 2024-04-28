@@ -1,6 +1,6 @@
 import javax.swing.*;
 public class Menu extends JFrame {
-
+    static QuestionLinkedList survey = new QuestionLinkedList();
     Menu(){
 
     }

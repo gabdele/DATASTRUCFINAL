@@ -28,7 +28,7 @@ public class QuestionWindow extends JFrame implements ActionListener {
         prevB.addActionListener(this);
 
         //y.qOptions
-        switch (y.t){
+        switch (y.getT()){
             case DROP:
                 String[] oList = new String[y.qOptions.size()];
                 for (int i = 0; i<y.qOptions.size(); i++){
