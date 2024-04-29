@@ -42,6 +42,13 @@ public class Menu extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
-
+        switch(source){
+            case create:
+                break;
+            case take:
+                break;
+            case results:
+                break;
+        }
     }
 }
