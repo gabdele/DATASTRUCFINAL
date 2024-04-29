@@ -29,7 +29,7 @@ public class QuestionMakerWindow extends JFrame implements ActionListener { //sh
         next = new JButton("next");
         next.addActionListener(this);
 
-        heading.setFont(new Font("PLAIN", Font.BOLD,30));
+        heading.setFont(new Font("Serif", Font.BOLD,30));
         whatKind.setFont(new Font("PLAIN",Font.PLAIN,20));
         howMany.setFont(new Font("PLAIN",Font.PLAIN,20));
 
