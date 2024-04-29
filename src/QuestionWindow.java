@@ -76,38 +76,45 @@ public class QuestionWindow extends JFrame implements ActionListener {
         }
     }
 
+    private void logAnswers(){
+        counter = 0;
+        switch (y.getT()){ //detect selections and add to respCounter within question accordingly
+            case DROP:
+                y.count(opt.getSelectedIndex());
+                break;
+            case CHECK:
+                for (Component component : options.getComponents()) {
+                    if (component instanceof JCheckBox & ((JCheckBox) component).isSelected()) {
+                        y.count(counter);
+                    }
+                    else{
+                        counter++;
+                    }
+                }
+                break;
+            case RADIO:
+                y.count(group.getSelection().getMnemonic());
+                break;
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton pressed = (JButton) e.getSource();
         if(pressed==nextB){
-            counter = 0;
-            switch (y.getT()){ //detect selections and add to respCounter within question accordingly
-                case DROP:
-                    y.count(opt.getSelectedIndex());
-                    break;
-                case CHECK:
-                    for (Component component : options.getComponents()) {
-                        if (component instanceof JCheckBox & ((JCheckBox) component).isSelected()) {
-                            y.count(counter);
-                        }
-                        else{
-                            counter++;
-                        }
-                    }
-                    break;
-                case RADIO:
-                    y.count(group.getSelection().getMnemonic());
-                    break;
-            }
+            logAnswers();
             x.getNext().display();
             dispose();
         }
-        else if(pressed==prevB){
+        else if(pressed==prevB){  //ran out of time to get this functional
             JOptionPane.showMessageDialog(null,
                         "Back button not functional at this time");
         }
         else{ //if submit is pressed
-
+            logAnswers();
+            Menu menu = new Menu();
+            menu.setVisible(true);
+            dispose();
         }
     }
 }
