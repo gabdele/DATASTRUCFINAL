@@ -18,7 +18,7 @@ public class QuestionMakerWindow extends JFrame implements ActionListener { //sh
     }
 
     QuestionMakerWindow(int id){ //insert previous ID to make sure it increases
-        setSize(550,200);
+        setSize(400,200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.ID= id+1;
         heading = new JLabel(" Question "+ID);
