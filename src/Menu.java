@@ -62,7 +62,13 @@ public class Menu extends JFrame implements ActionListener {
             }
 
         }else {//if source is result
-
+            if (survey.head != null){
+                TempResultWindow TRW = new TempResultWindow(survey.head);
+                TRW.setVisible(true);
+            }else{
+                JOptionPane.showMessageDialog(null,
+                        "survey has not been created");
+            }
         }
     }
 }

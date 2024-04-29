@@ -21,7 +21,7 @@ public class QuestionWindow extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.x=x;
         y = x.getQuestion();
-        heading = new JLabel("Question"+y.ID);
+        heading = new JLabel("Question "+y.ID);
         heading.setFont(new Font("Serif", Font.BOLD,20));
         qText = new JLabel(y.getQuestionText());
         nextB = new JButton("next");
@@ -30,6 +30,7 @@ public class QuestionWindow extends JFrame implements ActionListener {
 
         nextB.addActionListener(this);
         prevB.addActionListener(this);
+        submitB.addActionListener(this);
 
         setLayout(new FlowLayout());
         add(heading);
