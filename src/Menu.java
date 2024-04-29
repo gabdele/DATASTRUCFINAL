@@ -35,20 +35,21 @@ public class Menu extends JFrame implements ActionListener {
 
     }
     public static void main(String[] args) {
-        QuestionMakerWindow thiswindow = new QuestionMakerWindow(0);
-        thiswindow.setVisible(true);
+        Menu theMenu = new Menu();
+        theMenu.setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
-        switch(source){
-            case create:
-                break;
-            case take:
-                break;
-            case results:
-                break;
+        if (source == create){
+            QuestionMakerWindow thiswindow = new QuestionMakerWindow(0);
+            thiswindow.setVisible(true);
+            dispose();
+        } else if (source == take){
+
+        }else {//if source is result
+
         }
     }
 }
