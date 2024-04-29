@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class QuestionMakerWindow2 extends JFrame implements ActionListener {
-    ///FIX LAYOUT RESIZE TO FIND ISSUE
     Question ques = QuestionMakerWindow.getQues();
     JLabel qText = new JLabel("Question text:");
     JLabel aText = new JLabel("Options:");
@@ -16,10 +15,10 @@ public class QuestionMakerWindow2 extends JFrame implements ActionListener {
     JButton done;
 
     QuestionMakerWindow2() {
-        if (ques.optNum<7){ //FIX: always registering as true
+        if (ques.optNum<7){
             setSize(300, 300);
         } else{
-            setSize(300,600);
+            setSize(300,600); //grow to fit more questions
         }
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         enText = new JTextField(20);

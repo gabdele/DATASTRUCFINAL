@@ -14,6 +14,7 @@ class Question {
         this.qOptions = new ArrayList<String>(optNum);
         this.respCounter = new int[optNum];
         this.t = optType.DROP;
+        this.optNum = optNum;
         for(int i=0; i<optNum;i++){
             respCounter[i]=0;
         } //start the list of counters at 0
