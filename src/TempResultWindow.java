@@ -39,5 +39,7 @@ public class TempResultWindow extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         TempResultWindow TRW = new TempResultWindow(Q.getNext());
+        TRW.setVisible(true);
+        dispose();
     }
 }
