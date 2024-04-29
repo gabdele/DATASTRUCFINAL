@@ -1,7 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Menu extends JFrame {
+public class Menu extends JFrame implements ActionListener {
     static QuestionLinkedList survey = new QuestionLinkedList();
     JLabel heading;
     JButton create;
@@ -21,7 +23,9 @@ public class Menu extends JFrame {
         take.setFont(PLAINFont);
         results.setFont(PLAINFont);
 
-
+        create.addActionListener(this);
+        take.addActionListener(this);
+        results.addActionListener(this);
 
         setLayout(new GridLayout(4,1));
         add(heading);
@@ -35,4 +39,9 @@ public class Menu extends JFrame {
         thiswindow.setVisible(true);
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object source = e.getSource();
+
+    }
 }
