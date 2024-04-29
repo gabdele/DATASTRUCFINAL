@@ -11,7 +11,7 @@ public class Menu extends JFrame implements ActionListener {
     JButton take;
     JButton results;
     static ArrayList currentResp;
-    Font PLAINFont = new Font("PLAIN",Font.PLAIN,20);
+    static Font PLAINFont = new Font("PLAIN",Font.PLAIN,20);
     Menu(){
         setSize(600,550);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
