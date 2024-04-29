@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class Menu extends JFrame implements ActionListener {
     static QuestionLinkedList survey = new QuestionLinkedList();
@@ -9,6 +10,7 @@ public class Menu extends JFrame implements ActionListener {
     JButton create;
     JButton take;
     JButton results;
+    static ArrayList currentResp;
     Font PLAINFont = new Font("PLAIN",Font.PLAIN,20);
     Menu(){
         setSize(600,550);
@@ -34,6 +36,13 @@ public class Menu extends JFrame implements ActionListener {
         add(results);
 
     }
+    public static void IterateThroughQWindows(){
+        QuestionNode current = survey.head;
+        currentResp = new ArrayList(1);
+        while(current!=survey.tail){
+            current.display();
+        }
+    }
     public static void main(String[] args) {
         Menu theMenu = new Menu();
         theMenu.setVisible(true);
@@ -43,10 +52,18 @@ public class Menu extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         if (source == create){
-            QuestionMakerWindow thiswindow = new QuestionMakerWindow(0);
-            thiswindow.setVisible(true);
-            dispose();
+            if (survey.head ==null){
+            QuestionMakerWindow thisWindow = new QuestionMakerWindow(0);
+            thisWindow.setVisible(true);
+            dispose();}else{
+                JOptionPane.showMessageDialog(null,
+                        "survey already created");
+            }
         } else if (source == take){
+            if (survey.head != null){
+                IterateThroughQWindows();
+
+            }
 
         }else {//if source is result
 
