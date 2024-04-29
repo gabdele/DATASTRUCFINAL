@@ -28,7 +28,10 @@ public class QuestionWindow extends JFrame implements ActionListener {
         nextB.addActionListener(this);
         prevB.addActionListener(this);
 
-        //y.qOptions
+        setLayout(new FlowLayout());
+        add(heading);
+        add(qText);
+
         switch (y.getT()){
             case DROP:
                 String[] oList = new String[y.qOptions.size()];
@@ -54,6 +57,7 @@ public class QuestionWindow extends JFrame implements ActionListener {
                 System.out.println("an error has occurred");
                 break;
         }
+        add(options);
         //only have back button if there is a prev, only next if there is a next
         if(x!= QuestionLinkedList.head){
             add(prevB);
@@ -68,18 +72,33 @@ public class QuestionWindow extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton pressed = (JButton) e.getSource();
-        if(pressed==nextB){
+        if(pressed==nextB){ //next and back buttons log current responses
+            try{
             switch (y.getT()){
                 case DROP:
+                    Menu.currentResp.remove(y.ID);
                     Menu.currentResp.add(y.ID,opt.getSelectedItem());
                     break;
                 case CHECK:
-                    Menu.currentResp.add(y.ID,)
+                    ArrayList selectedOptions = new ArrayList<String>(1);
+                    for (Component component : options.getComponents()) {
+                        if (component instanceof JCheckBox & ((JCheckBox) component).isSelected()) {
+                            selectedOptions.add(((JCheckBox) component).getText());
+                        }
+                    }
+                    Menu.currentResp.remove(y.ID);
+                    Menu.currentResp.add(y.ID,selectedOptions);
                     break;
-                case RADIO:
+//                case RADIO:
+//                    Menu.currentResp.remove(y.ID);
+//                    Menu.currentResp.add(y.ID,);
+//                    break;
+            }
 
-                    break;
-
+        }catch(Exception exception){
+                JOptionPane.showMessageDialog(null,
+                        "please respond to question");
+            }
         }
         else if(pressed==prevB){
 

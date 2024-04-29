@@ -39,9 +39,7 @@ public class Menu extends JFrame implements ActionListener {
     public static void IterateThroughQWindows(){
         QuestionNode current = survey.head;
         currentResp = new ArrayList(1);
-        while(current!=survey.tail){
-            current.display();
-        }
+        current.display();
     }
     public static void main(String[] args) {
         Menu theMenu = new Menu();
