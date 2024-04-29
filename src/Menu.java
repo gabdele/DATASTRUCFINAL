@@ -36,11 +36,7 @@ public class Menu extends JFrame implements ActionListener {
         add(results);
 
     }
-    public static void IterateThroughQWindows(){
-        QuestionNode current = survey.head;
-        currentResp = new ArrayList(1);
-        current.display();
-    }
+
     public static void main(String[] args) {
         Menu theMenu = new Menu();
         theMenu.setVisible(true);
@@ -59,8 +55,10 @@ public class Menu extends JFrame implements ActionListener {
             }
         } else if (source == take){
             if (survey.head != null){
-                IterateThroughQWindows();
-
+                survey.head.display();
+            }else{
+                JOptionPane.showMessageDialog(null,
+                        "survey has not been created");
             }
 
         }else {//if source is result
@@ -68,3 +66,6 @@ public class Menu extends JFrame implements ActionListener {
         }
     }
 }
+//public static void IterateThroughQWindows(){
+//    survey.head.display();
+//}
